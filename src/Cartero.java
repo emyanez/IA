@@ -27,21 +27,21 @@ public class Cartero extends TimerTask implements Constantes {
 
         switch (evento.getKeyCode()) {
             case 38:
-                moverCrtArriba();
+                moverCarteroArriba();
                 break;
             case 40:
-                moverCrtAbajo();
+                moverCarteroAbajo();
                 break;
             case 37:
-                moverCrtIzquierda();
+                moverCarteroIzquierda();
                 break;
             case 39:
-                moverCrtDerecha();
+                moverCarteroDerecha();
                 break;
         }
     }
 
-    private void moverCrtArriba() {
+    private void moverCarteroArriba() {
         if (cartero.y > 0) {
             char op = calle.celdas[cartero.x][cartero.y - 1].tipo;
             switch (op) {
@@ -95,7 +95,7 @@ public class Cartero extends TimerTask implements Constantes {
         }
     }
 
-    private void moverCrtAbajo() {
+    private void moverCarteroAbajo() {
         if (cartero.y < altoMapa - 1) {
             char op = calle.celdas[cartero.x][cartero.y + 1].tipo;
             switch (op) {
@@ -151,7 +151,7 @@ public class Cartero extends TimerTask implements Constantes {
         }
     }
 
-    private void moverCrtIzquierda() {
+    private void moverCarteroIzquierda() {
         if (cartero.x > 0) {
             char op = calle.celdas[cartero.x - 1][cartero.y].tipo;
             switch (op) {
@@ -204,7 +204,7 @@ public class Cartero extends TimerTask implements Constantes {
         }
     }
 
-    private void moverCrtDerecha() {
+    private void moverCarteroDerecha() {
         if ((cartero.x < anchoMapa - 1)) {
             char op = calle.celdas[cartero.x + 1][cartero.y].tipo;
             switch (op) {

@@ -13,139 +13,136 @@ import java.util.TimerTask;
 public class Auto extends TimerTask implements Constantes {
 
     public Calles calle;
-    public Celda automovil;
+    public Celda auto;
 
     public Auto(Calles calle) {
         this.calle = calle;
-        automovil = new Celda(27, altoMapa - 1, 0, 0, 'T');
-        calle.celdas[automovil.x][automovil.y].tipo = 'T';
+        auto = new Celda(27, altoMapa - 1, 0, 0, 'T');
+        calle.celdas[auto.x][auto.y].tipo = 'T';
     }
 
+    //Movimiento de Auto a la izquierda
     public void moverAutoIzq() {
-        if (automovil.x > 0) {
-            if (calle.celdas[automovil.x - 1][automovil.y].tipo == 'C'
-                    || calle.celdas[automovil.x - 1][automovil.y].tipo == 'Z') {
-                if ((automovil.x % 2 == 0) && (automovil.x % 6 != 0)) {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+        if (auto.x > 0) {
+            if (calle.celdas[auto.x - 1][auto.y].tipo == 'C'
+                    || calle.celdas[auto.x - 1][auto.y].tipo == 'Z') {
+                if ((auto.x % 2 == 0) && (auto.x % 6 != 0)) {
+                    calle.celdas[auto.x][auto.y].tipo = 'Z';
                 } else {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                    calle.celdas[auto.x][auto.y].tipo = 'C';
                 }
-                automovil.x = automovil.x - 1;
-                automovil.i = automovil.x;
-                automovil.j = automovil.y;
-                calle.celdas[automovil.x][automovil.y].tipo = 'T';
+                auto.x = auto.x - 1;
+                auto.i = auto.x;
+                auto.j = auto.y;
+                calle.celdas[auto.x][auto.y].tipo = 'T';
             }
         } else {
-            if ((automovil.x % 2 == 0) && (automovil.x % 6 != 0)) {
-                calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+            if ((auto.x % 2 == 0) && (auto.x % 6 != 0)) {
+                calle.celdas[auto.x][auto.y].tipo = 'Z';
             } else {
-                calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                calle.celdas[auto.x][auto.y].tipo = 'C';
             }
-            automovil.x = anchoMapa - 1;
-            automovil.i = automovil.x;
-            automovil.j = automovil.y;
-            calle.celdas[automovil.x][automovil.y].tipo = 'T';
+            auto.x = anchoMapa - 1;
+            auto.i = auto.x;
+            auto.j = auto.y;
+            calle.celdas[auto.x][auto.y].tipo = 'T';
         }
     }
 
+    //Movimiento de auto Derecha
     public void moverAutoDer() {
-        if (automovil.x < anchoMapa - 1) {
-            if (calle.celdas[automovil.x + 1][automovil.y].tipo == 'C'
-                    || calle.celdas[automovil.x + 1][automovil.y].tipo == 'Z') {
-                if ((automovil.x % 2 == 0) && (automovil.x % 6 != 0)) {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+        if (auto.x < anchoMapa - 1) {
+            if (calle.celdas[auto.x + 1][auto.y].tipo == 'C'
+                    || calle.celdas[auto.x + 1][auto.y].tipo == 'Z') {
+                if ((auto.x % 2 == 0) && (auto.x % 6 != 0)) {
+                    calle.celdas[auto.x][auto.y].tipo = 'Z';
                 } else {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                    calle.celdas[auto.x][auto.y].tipo = 'C';
                 }
-                automovil.x = anchoMapa - 1;
-                automovil.i = automovil.x;
-                automovil.j = automovil.y;
-                calle.celdas[automovil.x][automovil.y].tipo = 'T';
+                auto.x = anchoMapa - 1;
+                auto.i = auto.x;
+                auto.j = auto.y;
+                calle.celdas[auto.x][auto.y].tipo = 'T';
             }
         } else {
-            if ((automovil.x % 2 == 0) && (automovil.x % 6 != 0)) {
-                calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+            if ((auto.x % 2 == 0) && (auto.x % 6 != 0)) {
+                calle.celdas[auto.x][auto.y].tipo = 'Z';
             } else {
-                calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                calle.celdas[auto.x][auto.y].tipo = 'C';
             }
-            automovil.x = 0;
-            automovil.i = automovil.x;
-            automovil.j = automovil.y;
-            calle.celdas[automovil.x][automovil.y].tipo = 'T';
+            auto.x = 0;
+            auto.i = auto.x;
+            auto.j = auto.y;
+            calle.celdas[auto.x][auto.y].tipo = 'T';
         }
     }
 
-    public void moverAutoUp() {
-        if (automovil.y > 0) {
-            if (calle.celdas[automovil.x][automovil.y - 1].tipo == 'C'
-                    || calle.celdas[automovil.x][automovil.y - 1].tipo == 'Z') {
-                if ((automovil.y % 2 == 0) && (automovil.y % 6 != 0)) {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+    //Movimiento de auto arriba
+    public void moverAutoArriba() {
+        if (auto.y > 0) {
+            if (calle.celdas[auto.x][auto.y - 1].tipo == 'C'
+                    || calle.celdas[auto.x][auto.y - 1].tipo == 'Z') {
+                if ((auto.y % 2 == 0) && (auto.y % 6 != 0)) {
+                    calle.celdas[auto.x][auto.y].tipo = 'Z';
                 } else {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                    calle.celdas[auto.x][auto.y].tipo = 'C';
                 }
-                automovil.y = automovil.y - 1;
-                calle.celdas[automovil.x][automovil.y].tipo = 'T';
+                auto.y = auto.y - 1;
+                calle.celdas[auto.x][auto.y].tipo = 'T';
             }
         } else {
-            if ((automovil.y % 3 == 0) && (automovil.y % 6 != 0)) {
-                calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+            if ((auto.y % 3 == 0) && (auto.y % 6 != 0)) {
+                calle.celdas[auto.x][auto.y].tipo = 'Z';
             } else {
-                calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                calle.celdas[auto.x][auto.y].tipo = 'C';
             }
-            automovil.y = altoMapa - 1;
-            automovil.i = automovil.x;
-            automovil.j = automovil.y;
-            calle.celdas[automovil.x][automovil.y].tipo = 'T';
+            auto.y = altoMapa - 1;
+            auto.i = auto.x;
+            auto.j = auto.y;
+            calle.celdas[auto.x][auto.y].tipo = 'T';
         }
     }
 
 //Movimiento de Auto abajo
-    public void moverAutoDwn() {
-        if (automovil.y != altoMapa - 1) {
-            if (calle.celdas[automovil.x][automovil.y + 1].tipo == 'C'
-                    || calle.celdas[automovil.x][automovil.y + 1].tipo == 'Z') {
-                if ((automovil.y % 2 == 0) && (automovil.y % 6 != 0)) {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+    public void moverAutoAbajo() {
+        if (auto.y != altoMapa - 1) {
+            if (calle.celdas[auto.x][auto.y + 1].tipo == 'C'
+                    || calle.celdas[auto.x][auto.y + 1].tipo == 'Z') {
+                if ((auto.y % 2 == 0) && (auto.y % 6 != 0)) {
+                    calle.celdas[auto.x][auto.y].tipo = 'Z';
                 } else {
-                    calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                    calle.celdas[auto.x][auto.y].tipo = 'C';
                 }
-                automovil.y = automovil.y + 1;
-                calle.celdas[automovil.x][automovil.y].tipo = 'T';
+                auto.y = auto.y + 1;
+                calle.celdas[auto.x][auto.y].tipo = 'T';
             }
         } else {
-            if ((automovil.y % 3 != 0) && (automovil.y % 6 == 0)) {
-                calle.celdas[automovil.x][automovil.y].tipo = 'Z';
+            if ((auto.y % 3 != 0) && (auto.y % 6 == 0)) {
+                calle.celdas[auto.x][auto.y].tipo = 'Z';
             } else {
-                calle.celdas[automovil.x][automovil.y].tipo = 'C';
+                calle.celdas[auto.x][auto.y].tipo = 'C';
             }
-            calle.celdas[automovil.x][automovil.y].tipo = 'C';
-            automovil.x = randomAuto();
-            automovil.y = 0;
-            automovil.i = automovil.x;
-            automovil.j = automovil.y;
-            calle.celdas[automovil.x][automovil.y].tipo = 'T';
+            calle.celdas[auto.x][auto.y].tipo = 'C';
+            auto.x = randomAuto();
+            auto.y = 0;
+            auto.i = auto.x;
+            auto.j = auto.y;
+            calle.celdas[auto.x][auto.y].tipo = 'T';
         }
     }
 
     @Override
     public void run() {
         int direccion;
-//    if(){
         direccion = numeroAleatorio(1, 4);
-//    }
-//    else{
-//    direccion=numeroAleatorio(3,4);
-//    }
         switch (direccion) {
             case 1:
                 moverAutoIzq();
                 break;
-//            case 2:  moverAutoDer(); break;
-            case 3:
-                moverAutoUp();
+
+            case 2:
+                moverAutoArriba();
                 break;
-//            case 4:  moverAutoDwn(); break;
         }
         calle.lienzoPadre.repaint();
     }

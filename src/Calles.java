@@ -8,12 +8,8 @@
  *
  * @author Emilio
  */
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
 import javax.swing.JComponent;
-import javax.swing.JOptionPane;
 
 public class Calles extends JComponent implements Constantes {
 
@@ -61,7 +57,7 @@ public class Calles extends JComponent implements Constantes {
 
         celdaMovimiento = new Celda(cartero_x, cartero_y, cartero_x, cartero_y, 'J');
 
-        /*se preparan las imenciones y se entregan para definir los tamaños de las calles */
+        /*se preparan las dimenciones y se entregan para definir los tamaños de las calles */
         this.anchoCalle = anchoMapa * SizeCelda;
         this.altoCalle = altoMapa * SizeCelda;
         this.setSize(anchoCalle, altoCalle);

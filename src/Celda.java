@@ -33,7 +33,6 @@ public class Celda extends JComponent implements Constantes {
         this.y = y;
         this.i = i;
         this.j = j;
-
         this.tipo = tipo;
         try {
             automovil = ImageIO.read(new File("src/imagenes/auto.png"));
