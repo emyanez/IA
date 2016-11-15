@@ -32,8 +32,58 @@ public interface Constantes {
     public final int cartero_y = 0;//posicion cartero eje y
     public final int portal_x = 0;//posicion portal eje x
     public final int portal_y = 20;//posicion portal eje y
+    public final int portal_x2 = 0;//posicion portal eje x
+    public final int portal_y2 = 2;//posicion portal eje y
+    public final int portal_x3 = 8;//posicion portal eje x
+    public final int portal_y3 = 0;//posicion portal eje y
+    public final int portal_x4 = 10;//posicion portal eje x
+    public final int portal_y4 = 0;//posicion portal eje y
+    public final int portal_x5 = 16;//posicion portal eje x
+    public final int portal_y5 = 0;//posicion portal eje y
+    public final int portal_x6 = 22;//posicion portal eje x
+    public final int portal_y6 = 0;//posicion portal eje y
+    public final int portal_x7 = 30;//posicion portal eje x
+    public final int portal_y7 = 2;//posicion portal eje y
+    public final int portal_x8 =0;
+    public final int portal_y8 =4;
+    public final int portal_x9 =10;
+    public final int portal_y9 =4;
+    public final int portal_x10 =22;
+    public final int portal_y10 =4;
+    public final int portal_x11 =16;
+    public final int portal_y11 =4;
+    public final int portal_x12 =30;
+    public final int portal_y12 =4;
+     public final int portal_x13 =8;
+    public final int portal_y13 =4;
+    public final int portal_x14 =0;
+    public final int portal_y14 =10;
+    public final int portal_x15 =12;
+    public final int portal_y15 =10;
+    public final int portal_x16 =16;
+    public final int portal_y16 =10;
+    public final int portal_x17 =22;
+    public final int portal_y17 =10;
+    public final int portal_x18 =30;
+    public final int portal_y18 =10;
+    public final int portal_x19 =8;
+    public final int portal_y19 =10;
+    public final int portal_x20 =4;
+    public final int portal_y20 =20;
+    public final int portal_x21 =8;
+    public final int portal_y21 =20;
+    public final int portal_x22 =10;
+    public final int portal_y22 =20;
+    public final int portal_x23 =16;
+    public final int portal_y23 =20;
+    public final int portal_x24 =22;
+    public final int portal_y24 =20;
+     public final int portal_x25 =30;
+    public final int portal_y25 =20;
+   //Variable certamen
+   //Variable certamen
+    public final int cantidad_c =1;
     
-
     /*cartero horizontal*/
     default int numeroAleatorio(int minimo, int maximo) {
         Random random = new Random();

@@ -19,9 +19,9 @@ import java.util.Timer;
 public class Lienzo extends Canvas implements Constantes{
 public Cartero cartero;
 public Calles calle;
-public Peaton peaton,peaton2;
-public Auto auto, auto2,auto3;
-public Timer temporizador;
+public Peaton peaton,peaton2,peaton3;
+public Auto auto, auto2,auto3, auto4;
+public Timer timer;
 
 public Lienzo(){
     
@@ -29,21 +29,27 @@ public Lienzo(){
     auto=new Auto(calle);
     auto2=new Auto(calle);
     auto3=new Auto(calle);
+    auto4=new Auto(calle);
     peaton = new Peaton(calle);
     peaton2 = new Peaton(calle);
+    peaton3=new Peaton(calle);
     cartero=new Cartero(calle);
     
     this.setSize(calle.anchoCalle, calle.altoCalle);
 
-    temporizador = new Timer(); 
+    timer = new Timer(); 
     
     
-  temporizador.scheduleAtFixedRate( auto , 0 , 200);
-  temporizador.scheduleAtFixedRate( auto2 ,0 , 300);
-  temporizador.scheduleAtFixedRate( auto3 ,0 , 400);
-    temporizador.scheduleAtFixedRate( peaton , 0 ,800);
-     temporizador.scheduleAtFixedRate(peaton2 , 0 ,800);
-       
+  timer.scheduleAtFixedRate( auto , 0 , 200);
+  //Agregar Autos
+  timer.scheduleAtFixedRate( auto2 ,0 , 300);
+  timer.scheduleAtFixedRate( auto3 ,0 , 400);
+  timer.scheduleAtFixedRate(auto4, 0, 500);
+  //Agregar Peatones
+  timer.scheduleAtFixedRate( peaton , 0 ,800);
+  timer.scheduleAtFixedRate(peaton2 , 0 ,800);
+  timer.scheduleAtFixedRate(peaton3 , 0 ,800);
+  
 addMouseListener(new MouseAdapter() {
 @Override
     public void mouseClicked(MouseEvent evt) {
@@ -71,7 +77,7 @@ calle.paintComponent(g);
 public void paint(Graphics g) {
 update(g);
 }
- private void agregarObstaculo(MouseEvent evt) {
+private void agregarObstaculo(MouseEvent evt) {
     int aX=evt.getX();
     int aY=evt.getY();
     if((evt.getModifiers() & InputEvent.BUTTON1_MASK) == InputEvent.BUTTON1_MASK) {
@@ -88,6 +94,8 @@ update(g);
         calle.celdas[aX/SizeCelda][aY/SizeCelda].tipo='P';
         }       
     }
+
+
 }
         
     

@@ -81,7 +81,7 @@ public void moverPeatonDer(){
                 calle.celdas[peaton.x][peaton.y].tipo='P';
                 }    
 }
-public void moverPeatonUp(){
+public void moverPeatonArriba(){
            if (peaton.y > 0){
                if(calle.celdas[peaton.x][peaton.y-1].tipo=='A'||
                 calle.celdas[peaton.x][peaton.y-1].tipo=='Z') {
@@ -108,7 +108,7 @@ public void moverPeatonUp(){
                  calle.celdas[peaton.x][peaton.y].tipo='P';
                 }
 }
-public void moverPeatonDwn(){
+public void moverPeatonAbajo(){
             if (peaton.y != altoMapa-1){
                     if(calle.celdas[peaton.x][peaton.y+1].tipo=='A'||
                        calle.celdas[peaton.x][peaton.y+1].tipo=='Z') {
@@ -145,8 +145,8 @@ public void run() {
     switch (direccion){
         case 1:  moverPeatonIzq(); break;
         case 2:  moverPeatonDer(); break;
-        case 3:  moverPeatonUp(); break;
-        case 4:  moverPeatonDwn(); break;
+        case 3:  moverPeatonArriba(); break;
+        case 4:  moverPeatonAbajo(); break;
     }
     calle.lienzoPadre.repaint();
     }

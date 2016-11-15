@@ -54,7 +54,30 @@ public class Calles extends JComponent implements Constantes {
         /* iniciacion de celdas especiales Jugador y Portal */
         celdas[cartero_x][cartero_y].tipo = 'J';
         celdas[portal_x][portal_y].tipo = 'X';
-
+        celdas[portal_x2][portal_y2].tipo ='X';
+        celdas[portal_x3][portal_y3].tipo ='X';
+        celdas[portal_x4][portal_y4].tipo ='X';
+        celdas[portal_x5][portal_y5].tipo ='X';
+        celdas[portal_x6][portal_y6].tipo ='X';
+        celdas[portal_x7][portal_y7].tipo ='X';
+        celdas[portal_x8][portal_y8].tipo ='X';
+        celdas[portal_x9][portal_y9].tipo ='X';
+        celdas[portal_x10][portal_y10].tipo ='X';
+        celdas[portal_x11][portal_y11].tipo ='X';
+        celdas[portal_x12][portal_y12].tipo ='X';
+        celdas[portal_x13][portal_y13].tipo ='X';
+        celdas[portal_x14][portal_y14].tipo ='X';
+        celdas[portal_x15][portal_y15].tipo ='X';
+        celdas[portal_x16][portal_y16].tipo ='X';
+        celdas[portal_x17][portal_y17].tipo ='X';
+        celdas[portal_x18][portal_y18].tipo ='X';
+        celdas[portal_x19][portal_y19].tipo ='X';
+        celdas[portal_x20][portal_y20].tipo ='X';
+        celdas[portal_x21][portal_y21].tipo ='X';
+        celdas[portal_x22][portal_y22].tipo ='X';
+        celdas[portal_x23][portal_y23].tipo ='X';
+        celdas[portal_x24][portal_y24].tipo ='X';
+        celdas[portal_x25][portal_y25].tipo ='X';
         celdaMovimiento = new Celda(cartero_x, cartero_y, cartero_x, cartero_y, 'J');
 
         /*se preparan las dimenciones y se entregan para definir los tamaños de las calles */
