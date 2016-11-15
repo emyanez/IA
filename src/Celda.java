@@ -36,14 +36,14 @@ this.j=j;
 
 this.tipo=tipo;
 try {
-    automovil  = ImageIO.read(new File("src/imagenes/automovil.png"));
+    automovil  = ImageIO.read(new File("src/imagenes/auto.png"));
     obstaculo  = ImageIO.read(new File("src/imagenes/obstaculo.png"));
-    cartero  = ImageIO.read(new File("src/imagenes/jugador.png"));
+    cartero  = ImageIO.read(new File("src/imagenes/cartero.png"));
     casa    = ImageIO.read(new File("src/imagenes/casa.png"));
     camino   = ImageIO.read(new File("src/imagenes/camino.png"));
-    portal   = ImageIO.read(new File("src/imagenes/portalx.png"));
+    portal   = ImageIO.read(new File("src/imagenes/portal.png"));
     peaton   = ImageIO.read(new File("src/imagenes/peaton.png"));
-    acera   = ImageIO.read(new File("src/imagenes/acera.png"));
+    acera   = ImageIO.read(new File("src/imagenes/vereda.png"));
     cebra   = ImageIO.read(new File("src/imagenes/paso peatonal.png"));
     }
 catch (IOException e) {
