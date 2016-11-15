@@ -30,7 +30,7 @@ public interface Constantes {
 
     public final int cartero_x = 28;//posicion cartero eje x
     public final int cartero_y = 0;//posicion cartero eje y
-    public final int portal_x = 15;//posicion portal eje x
+    public final int portal_x = 0;//posicion portal eje x
     public final int portal_y = 20;//posicion portal eje y
     
 

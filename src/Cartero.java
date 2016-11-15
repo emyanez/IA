@@ -253,20 +253,20 @@ public class Cartero extends TimerTask implements Constantes {
         }
     }
 
-    private boolean vieneAuto(Calles calle, Celda cartero) {
-        if (calle.celdas[cartero.x][cartero.y - 1].tipo == 'T'
-                || calle.celdas[cartero.x][cartero.y - 2].tipo == 'T'
-                || calle.celdas[cartero.x][cartero.y + 1].tipo == 'T'
-                || calle.celdas[cartero.x][cartero.y + 2].tipo == 'T'
-                || calle.celdas[cartero.x - 1][cartero.y].tipo == 'T'
-                || calle.celdas[cartero.x - 2][cartero.y].tipo == 'T'
-                || calle.celdas[cartero.x + 1][cartero.y].tipo == 'T'
-                || calle.celdas[cartero.x + 2][cartero.y].tipo == 'T') {
-            return true;
-        } else {
-            return false;
+    private boolean vieneAuto(Calles calle , Celda cartero){
+    boolean flag=false;
+    for(int i=-2; i<2; i++){
+        for (int j=-2; j<2;j++){
+                if(((cartero.x+i>0)&&(cartero.y+j>0))&&((cartero.x+i<anchoMapa-1)&&(cartero.y+j<altoMapa-1))){
+                    if((calle.celdas[cartero.x+i][cartero.y+j].tipo== 'T')){
+                        flag=true;
+                        break;
+                    }
+                }
         }
-    }
+    }    
+    return flag;
+}
 
     @Override
     public void run() {
